@@ -1,5 +1,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=boblmbq&label=Profile%20views&color=0e75b6&style=flat" alt="boblmbq" /> </p>
 
+<img alt="snake eating my contribution graph" src="https://github.com/boblmbq/boblmbq/blob/output/github-contribution-grid-snake2.svg" />
+
 <h1 align="center">Hi 👋, I'm Danylo</h1>
 <h3 align="center">A passionate FullStack developer from Germany</h3>
 
