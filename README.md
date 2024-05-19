@@ -13,7 +13,7 @@
 
 - 🔭 I’m currently working on [YouTube downloader](https://github.com/SheGaDev/lazy-youtube-downloader)
 
-- 🌱 I’m currently learning **C, C#, Postgrestql, ternsorflow**
+- 🌱 I’m currently learning **C, C#, Java, Postgrestql, ternsorflow**
 
 - 👨‍💻 All of my projects are available at [https://github.com/boblmbq?tab=projects](https://github.com/boblmbq?tab=projects)
 
