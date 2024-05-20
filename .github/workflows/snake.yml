@@ -42,18 +42,12 @@ jobs:
           }
           </style>'
           
-          # Insert the CSS into the SVGs
-          for file in dist/*.svg; do
-            # Insert the CSS after the first <svg> tag
-            sed -i 's|<svg|<svg>\n'"$CSS"'|' $file
-
-            # Wrap the content with the appropriate theme class
-            sed -i 's|<svg|<div class="light-theme"><svg|' $file
-            echo '</svg></div>' >> $file
-          done
-
-          # Modify the dark theme SVG separately to use the dark theme class
-          sed -i 's|<div class="light-theme">|<div class="dark-theme">|' dist/github-snake-dark.svg
+          # Insert the CSS into the SVGs and wrap them in theme divs
+          echo "$CSS" | sudo tee -a dist/github-snake.svg dist/github-snake-dark.svg
+          sudo sed -i '1s/^/<div class="light-theme">\n/' dist/github-snake.svg
+          sudo sed -i -e '$a<\/div>' dist/github-snake.svg
+          sudo sed -i '1s/^/<div class="dark-theme">\n/' dist/github-snake-dark.svg
+          sudo sed -i -e '$a<\/div>' dist/github-snake-dark.svg
 
       - name: Push generated content to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
