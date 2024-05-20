@@ -2,7 +2,9 @@
 
 
 <div align="center">
+  
   ![Snake Animation](https://github.com/boblmbq/boblmbq/blob/output/github-snake-dark.svg)
+  
 </div>
 
 
