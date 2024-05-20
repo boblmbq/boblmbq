@@ -3,7 +3,7 @@
 
 <div align="center">
   
-  ![Snake animation](https://github.com/boblmbq/boblmbq/blob/output/github-snake-dark.svg)
+  ![Snake animation](https://github.com/boblmbq/boblmbq/blob/output/github-snake.svg)
 
 </div>
 
