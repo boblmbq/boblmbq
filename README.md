@@ -2,10 +2,21 @@
 
 
 <div align="center">
-  
-  ![Snake animation](https://github.com/boblmbq/boblmbq/blob/output/github-snake.svg)
-
+  <img id="snake-animation" src="" alt="Snake animation">
 </div>
+
+<script>
+  // Detect user's GitHub theme preference
+  const isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Update image source based on the theme preference
+  const snakeAnimation = document.getElementById('snake-animation');
+  if (isDarkTheme) {
+    snakeAnimation.src = 'https://github.com/boblmbq/boblmbq/blob/output/github-snake-dark.svg';
+  } else {
+    snakeAnimation.src = 'https://github.com/boblmbq/boblmbq/blob/output/github-snake.svg';
+  }
+</script>
 
 <h1 align="center">Hi 👋, I'm Danylo</h1>
 <h3 align="center">A passionate FullStack developer from Germany</h3>
