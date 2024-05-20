@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Create snake
         uses: Platane/snk@v3
         with:
@@ -19,10 +22,10 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Modify SVG for theme
+      - name: Add theming to SVGs
         run: |
-          # Add CSS to SVG for theme support
-          echo '<style>
+          # Define the CSS to be inserted
+          CSS='<style>
           :root {
             --color-square-light: #ebedf0;
             --color-square-dark:  #161b22;
@@ -37,15 +40,22 @@ jobs:
             fill: var(--color-square-dark);
             stroke: var(--color-corner-dark);
           }
-          </style>' | tee -a dist/github-snake.svg dist/github-snake-dark.svg
+          </style>'
+          
+          # Insert the CSS into the SVGs
+          for file in dist/*.svg; do
+            # Insert the CSS after the first <svg> tag
+            sed -i 's|<svg|<svg>\n'"$CSS"'|' $file
 
-          # Wrap SVG content in a div for theme classes
-          sed -i '1s/^/<div class="light-theme">\n/' dist/github-snake.svg
-          sed -i -e '$a<\/div>' dist/github-snake.svg
-          sed -i '1s/^/<div class="dark-theme">\n/' dist/github-snake-dark.svg
-          sed -i -e '$a<\/div>' dist/github-snake-dark.svg
+            # Wrap the content with the appropriate theme class
+            sed -i 's|<svg|<div class="light-theme"><svg|' $file
+            echo '</svg></div>' >> $file
+          done
 
-      - name: Push github-contribution-grid-snake.svg to the output branch
+          # Modify the dark theme SVG separately to use the dark theme class
+          sed -i 's|<div class="light-theme">|<div class="dark-theme">|' dist/github-snake-dark.svg
+
+      - name: Push generated content to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
