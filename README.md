@@ -12,10 +12,6 @@
 <h3 align="center">A passionate FullStack developer from Germany</h3>
 
 
-- 🔭 I’m currently working on [YouTube downloader](https://github.com/SheGaDev/lazy-youtube-downloader)
-
-- 🌱 I’m currently learning **C, C#, Java, Postgrestql, ternsorflow**
-
 - 👨‍💻 All of my projects are available at [https://github.com/boblmbq?tab=projects](https://github.com/boblmbq?tab=projects)
 
 - 📫 How to reach me **sichkardanylo@gmail.com** or [**boblmbq** <img src="https://imgs.search.brave.com/26ZsIqcw0pDEBZ8LHLQmFbVPXzq3rm_ZCDPVhIaHJ9E/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9naXRo/dWIuY29tL1RlbGVn/cmFtQmV0YS9UZWxl/Z3JhbS9yYXcvbWFp/bi9Bc3NldHMvdGVs/ZWdyYW0ucG5n" alt="telegram" align="center" widht="22" height="22"/>](https://t.me/boblmbq)
